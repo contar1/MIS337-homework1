@@ -1,0 +1,193 @@
+<!--
+Program name: patient-form.html
+Author: Ali Omar Alkobysee
+Date created: 02/05/2026
+Date last edited: 03/05/2026
+Version: 1.0
+Description: Patient registration form for CoreTrust Medical practice website.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoreTrust Medical - Patient Registration Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER / BANNER -->
+<div id="header">
+    <img src="logo.png" alt="CoreTrust Medical Logo" width="80">
+    <h1>CoreTrust Medical</h1>
+    <p id="today"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+    <h2 class="section-title">Patient Registration Form</h2>
+
+    <form action="thankyou.html" name="patientForm">
+
+        <table>
+
+            <!-- Patient Identity Section -->
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="first_name" maxlength="30"></td>
+
+                <td>Middle Initial:</td>
+                <td><input type="text" name="middle_initial" maxlength="1"></td>
+
+                <td>Last Name:</td>
+                <td><input type="text" name="last_name" maxlength="30"></td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth (MM/DD/YYYY):</td>
+                <td><input type="text" name="dob" maxlength="10" placeholder="MM/DD/YYYY"></td>
+
+                <td>Social Security:</td>
+                <td><input type="password" name="ssn" maxlength="11" placeholder="***-**-****"></td>
+            </tr>
+
+            <!-- Address & Contact Section -->
+            <tr>
+                <td>Address Line 1:</td>
+                <td><input type="text" name="address1" maxlength="30"></td>
+
+                <td>Address Line 2:</td>
+                <td><input type="text" name="address2" maxlength="30"></td>
+            </tr>
+
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="city" maxlength="30"></td>
+
+                <td>State:</td>
+                <td>
+                    <select name="state">
+                        <option value="">Select</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="NY">New York</option>
+                        <option value="TX">Texas</option>
+                        <!-- add all remaining 50 states + DC + PR -->
+                    </select>
+                </td>
+
+                <td>Zip Code:</td>
+                <td><input type="text" name="zip_code" maxlength="10"></td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email"></td>
+
+                <td>Phone (optional):</td>
+                <td><input type="text" name="phone" maxlength="15" placeholder="(XXX) XXX-XXXX"></td>
+            </tr>
+
+            <!-- Medical Information Section -->
+            <tr>
+                <td colspan="6"><strong>Medical Information</strong></td>
+            </tr>
+
+            <tr>
+                <td>Have you had:</td>
+                <td colspan="5">
+                    <input type="checkbox" name="condition1" value="chickenpox"> Chicken Pox
+                    <input type="checkbox" name="condition2" value="measles"> Measles
+                    <input type="checkbox" name="condition3" value="covid19"> COVID-19
+                    <input type="checkbox" name="condition4" value="smallpox"> Small Pox
+                    <input type="checkbox" name="condition5" value="tetanus"> Tetanus
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </td>
+
+                <td>Vaccinated:</td>
+                <td>
+                    <input type="radio" name="vaccinated" value="yes"> Yes
+                    <input type="radio" name="vaccinated" value="no"> No
+                </td>
+
+                <td>Insurance:</td>
+                <td>
+                    <input type="radio" name="insurance" value="yes"> Yes
+                    <input type="radio" name="insurance" value="no"> No
+                </td>
+            </tr>
+
+            <tr>
+                <td>Health Rating (1–10):</td>
+                <td colspan="5">
+                    <input type="range" name="health_rating" min="1" max="10" value="5">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Current Symptoms:</td>
+                <td colspan="5">
+                    <textarea name="symptoms" rows="3" cols="50"></textarea>
+                </td>
+            </tr>
+
+            <!-- Account Registration Section -->
+            <tr>
+                <td>User ID:</td>
+                <td><input type="text" name="user_id" maxlength="20"></td>
+
+                <td>Password:</td>
+                <td><input type="password" name="password" maxlength="50"></td>
+
+                <td>Confirm Password:</td>
+                <td><input type="password" name="confirm_password" maxlength="50"></td>
+            </tr>
+
+            <!-- Form Buttons -->
+            <tr>
+                <td colspan="6" style="text-align:center; padding-top:10px;">
+                    <input type="reset" value="CLEAR AND START OVER">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div> <!-- END MAIN CONTENT -->
+
+<!-- FOOTER -->
+<div id="footer">
+    <p>CoreTrust Medical | PO BOX 12345 | Houston, TX 77496</p>
+    <button>Contact Us</button>
+    <p>Follow us: FB | Twitter | Instagram</p>
+</div>
+
+<!-- DYNAMIC DATE SCRIPT -->
+<script>
+    const today = new Date();
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+    document.getElementById("today").innerHTML =
+        "Today is: " + today.toLocaleDateString('en-US', options);
+</script>
+
+</body>
+</html>

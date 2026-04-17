@@ -1,0 +1,58 @@
+<!--
+Program name: thankyou.html
+Author: Ali Omar Alkobysee
+Date created: 02/05/2026
+Date last edited: 03/20/2026
+Version: 1.0
+Description: Thank you page displayed after patient registration form submission.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoreTrust Medical - Thank You</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER / BANNER -->
+<div id="header">
+    <img src="logo.png" alt="CoreTrust Medical Logo" width="80">
+    <h1>CoreTrust Medical</h1>
+    <p id="today"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+    <h2 class="section-title">Submission Received</h2>
+
+    <p style="font-size: 1.2em; text-align: center; margin-top: 40px;">
+        <strong>HEY, Thank you for submitting.</strong>
+    </p>
+
+</div> <!-- END MAIN CONTENT -->
+
+<!-- FOOTER -->
+<div id="footer">
+    <p>CoreTrust Medical | PO BOX 12345 | Houston, TX 77496</p>
+    <button>Contact Us</button>
+    <p>Follow us: FB | Twitter | Instagram</p>
+</div>
+
+<!-- DYNAMIC DATE SCRIPT -->
+<script>
+    const today = new Date();
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+    document.getElementById("today").innerHTML =
+        "Today is: " + today.toLocaleDateString('en-US', options);
+</script>
+
+</body>
+</html>
